@@ -1,0 +1,58 @@
+[
+  {
+    "id": "vc-1001",
+    "title": "Illegal tree felling near Kothri reserve forest",
+    "category": "Deforestation",
+    "description": "Roughly 40 sal trees cleared overnight along the eastern boundary of the reserve, no permit signage visible at the site.",
+    "location": "Kothri Reserve Forest, MP",
+    "reporterHash": "seed-a1",
+    "votes": 128,
+    "voters": ["seed-a1", "seed-a2", "seed-a3"],
+    "status": "under_review",
+    "highlighted": true,
+    "createdAt": "2026-07-02T09:15:00.000Z",
+    "evidence": ["photo"]
+  },
+  {
+    "id": "vc-1002",
+    "title": "Clerk demanding unofficial fee for birth certificate",
+    "category": "Corruption",
+    "description": "Municipal office clerk asked for ₹500 cash 'processing fee' on top of the official government fee, refused to give a receipt.",
+    "location": "Ward Office 14, Indore",
+    "reporterHash": "seed-b1",
+    "votes": 94,
+    "voters": ["seed-b1", "seed-b2"],
+    "status": "under_review",
+    "highlighted": true,
+    "createdAt": "2026-07-05T14:40:00.000Z",
+    "evidence": ["audio"]
+  },
+  {
+    "id": "vc-1003",
+    "title": "Fake toll collection point on service road",
+    "category": "Fake Fees",
+    "description": "Unauthorized barricade set up by unidentified men collecting ₹50 'toll' from trucks, no official signage or receipt booth.",
+    "location": "NH-52 service road, Dewas bypass",
+    "reporterHash": "seed-c1",
+    "votes": 61,
+    "voters": ["seed-c1"],
+    "status": "new",
+    "highlighted": false,
+    "createdAt": "2026-07-09T07:05:00.000Z",
+    "evidence": ["photo", "video"]
+  },
+  {
+    "id": "vc-1004",
+    "title": "River dumping from textile unit",
+    "category": "Environment",
+    "description": "Visible discoloured effluent discharge into the Kshipra tributary during early morning hours, strong chemical smell.",
+    "location": "Kshipra tributary, Ujjain",
+    "reporterHash": "seed-d1",
+    "votes": 37,
+    "voters": ["seed-d1"],
+    "status": "new",
+    "highlighted": false,
+    "createdAt": "2026-07-11T05:50:00.000Z",
+    "evidence": ["photo"]
+  }
+]

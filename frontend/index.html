@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vigilant Citizen — Report. Verify. Vote. Escalate.</title>
+<meta name="description" content="A citizen-powered platform to report deforestation, corruption and fake fees — verified by Aadhaar, prioritized by community vote." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="nav__inner">
+    <div class="brand">
+      <svg class="brand__eye" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true">
+        <path d="M2 20C2 20 10 8 20 8C30 8 38 20 38 20C38 20 30 32 20 32C10 32 2 20 2 20Z" fill="none" stroke="var(--saffron)" stroke-width="2.4"/>
+        <circle cx="20" cy="20" r="6.5" fill="var(--saffron)"/>
+        <circle cx="20" cy="20" r="6.5" fill="none" stroke="var(--bg)" stroke-width="1"/>
+      </svg>
+      <span>Vigilant<em>Citizen</em></span>
+    </div>
+    <nav class="nav__links">
+      <a href="#how">How it works</a>
+      <a href="#feed">Live reports</a>
+      <a href="#report">File a report</a>
+      <a href="#assistant">AI assistant</a>
+    </nav>
+    <button class="btn btn--ghost" id="navReportBtn">Report now</button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero__radar" aria-hidden="true">
+    <svg viewBox="0 0 600 600" class="radar-svg">
+      <circle cx="300" cy="300" r="280" class="radar-ring" />
+      <circle cx="300" cy="300" r="200" class="radar-ring" />
+      <circle cx="300" cy="300" r="120" class="radar-ring" />
+      <circle cx="300" cy="300" r="40" class="radar-ring radar-ring--core" />
+      <line x1="300" y1="20" x2="300" y2="580" class="radar-cross" />
+      <line x1="20" y1="300" x2="580" y2="300" class="radar-cross" />
+      <g class="radar-sweep-group">
+        <path d="M300 300 L300 20 A280 280 0 0 1 447 87 Z" class="radar-sweep" />
+      </g>
+      <!-- pulsing report pins -->
+      <g class="pin" style="--x:210px; --y:170px; --delay:0s"><circle r="6" class="pin-dot"/><circle r="6" class="pin-ping"/></g>
+      <g class="pin" style="--x:420px; --y:230px; --delay:1.1s"><circle r="6" class="pin-dot"/><circle r="6" class="pin-ping"/></g>
+      <g class="pin" style="--x:360px; --y:400px; --delay:2.2s"><circle r="6" class="pin-dot"/><circle r="6" class="pin-ping"/></g>
+      <g class="pin" style="--x:190px; --y:380px; --delay:0.6s"><circle r="6" class="pin-dot"/><circle r="6" class="pin-ping"/></g>
+    </svg>
+  </div>
+
+  <div class="hero__content">
+    <p class="eyebrow">Open Innovation · Civic Tech</p>
+    <h1>Every citizen is a<br/><span class="highlight">watchpost.</span></h1>
+    <p class="hero__sub">
+      Report deforestation, corruption, and fake fees with photo, audio or video evidence.
+      Every report is filed by a real, Aadhaar-verified citizen — <strong>one Aadhaar, one vote</strong> —
+      so the community itself decides what deserves urgent attention.
+    </p>
+    <div class="hero__actions">
+      <a href="#report" class="btn btn--primary">File a report</a>
+      <a href="#feed" class="btn btn--outline">See live reports</a>
+    </div>
+
+    <div class="hero__stats" id="heroStats">
+      <div class="stat"><span class="stat__num" data-target="0" id="statReports">0</span><span class="stat__label">Reports filed</span></div>
+      <div class="stat"><span class="stat__num" data-target="0" id="statVotes">0</span><span class="stat__label">Community votes</span></div>
+      <div class="stat"><span class="stat__num" data-target="0" id="statForwarded">0</span><span class="stat__label">Forwarded to judiciary</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="how" id="how">
+  <p class="section-eyebrow">The process</p>
+  <h2>From sighting to escalation, in four verified steps</h2>
+  <div class="how__grid">
+    <div class="how__card">
+      <span class="how__num">01</span>
+      <h3>Verify with Aadhaar</h3>
+      <p>A one-time, format-checked Aadhaar verification confirms you're a real citizen — no account is ever tied to your name, only a secure hash.</p>
+    </div>
+    <div class="how__card">
+      <span class="how__num">02</span>
+      <h3>Report with evidence</h3>
+      <p>Attach a photo, audio clip or video, pin the location, and describe what you saw. Reports are timestamped and immutable once filed.</p>
+    </div>
+    <div class="how__card">
+      <span class="how__num">03</span>
+      <h3>Community votes</h3>
+      <p>Nearby verified citizens see the report and vote it up. One Aadhaar can only vote once per report — no bots, no duplicate outrage.</p>
+    </div>
+    <div class="how__card">
+      <span class="how__num">04</span>
+      <h3>Escalate to judiciary</h3>
+      <p>Reports that cross the community threshold are automatically flagged and forwarded for judicial and administrative attention.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LIVE FEED ================= -->
+<section class="feed" id="feed">
+  <div class="feed__header">
+    <div>
+      <p class="section-eyebrow">Right now</p>
+      <h2>Live citizen reports</h2>
+    </div>
+    <div class="feed__controls">
+      <select id="categoryFilter" class="select">
+        <option value="All">All categories</option>
+        <option value="Deforestation">Deforestation</option>
+        <option value="Corruption">Corruption</option>
+        <option value="Fake Fees">Fake Fees</option>
+        <option value="Environment">Environment</option>
+      </select>
+      <select id="sortFilter" class="select">
+        <option value="votes">Most voted</option>
+        <option value="recent">Most recent</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="feed__grid" id="feedGrid">
+    <!-- report cards injected by app.js -->
+  </div>
+</section>
+
+<!-- ================= REPORT FORM ================= -->
+<section class="report" id="report">
+  <p class="section-eyebrow">Take action</p>
+  <h2>File a verified report</h2>
+
+  <div class="report__panel">
+    <!-- Step indicator -->
+    <div class="steps">
+      <div class="step step--active" data-step="1"><span>1</span>Verify Aadhaar</div>
+      <div class="step" data-step="2"><span>2</span>Confirm OTP</div>
+      <div class="step" data-step="3"><span>3</span>Report details</div>
+      <div class="step" data-step="4"><span>4</span>Submitted</div>
+    </div>
+
+    <!-- Step 1: Aadhaar -->
+    <div class="step-panel step-panel--active" id="panel-1">
+      <label class="field-label" for="aadhaarInput">12-digit Aadhaar number</label>
+      <input type="text" id="aadhaarInput" class="input" placeholder="XXXX XXXX XXXX" maxlength="12" inputmode="numeric" />
+      <p class="field-hint">Simulated verification for this demo — validated with the same Verhoeff checksum UIDAI uses. Your Aadhaar number is never stored, only a one-way hash. <strong style="color:var(--saffron)">Try test number 234123412346</strong> — any 12-digit number that passes the checksum works.</p>
+      <button type="button" class="chip" id="btnMoreNumbers" style="margin-bottom:16px;">🔄 Need another test number?</button>
+      <p class="field-hint" id="moreNumbersList" style="display:none;"></p>
+      <button class="btn btn--primary" id="btnRequestOtp">Send OTP</button>
+      <p class="field-error" id="aadhaarError"></p>
+    </div>
+
+    <!-- Step 2: OTP -->
+    <div class="step-panel" id="panel-2">
+      <label class="field-label" for="otpInput">Enter OTP</label>
+      <input type="text" id="otpInput" class="input" placeholder="6-digit code" maxlength="6" inputmode="numeric" />
+      <p class="field-hint" id="otpHint">Demo mode: check the server console log — the mock OTP is printed there instead of sent by SMS.</p>
+      <button class="btn btn--primary" id="btnVerifyOtp">Verify & continue</button>
+      <p class="field-error" id="otpError"></p>
+    </div>
+
+    <!-- Step 3: Report details -->
+    <div class="step-panel" id="panel-3">
+      <div class="form-grid">
+        <div>
+          <label class="field-label" for="titleInput">Title</label>
+          <input type="text" id="titleInput" class="input" placeholder="Short, factual summary" />
+        </div>
+        <div>
+          <label class="field-label" for="categoryInput">Category</label>
+          <select id="categoryInput" class="input">
+            <option>Deforestation</option>
+            <option>Corruption</option>
+            <option>Fake Fees</option>
+            <option>Environment</option>
+          </select>
+        </div>
+      </div>
+      <label class="field-label" for="locationInput">Location</label>
+      <input type="text" id="locationInput" class="input" placeholder="Village / area / landmark" />
+
+      <label class="field-label" for="descInput">Description</label>
+      <textarea id="descInput" class="input textarea" rows="4" placeholder="What did you see? Be specific and factual."></textarea>
+
+      <label class="field-label">Attach evidence (photo, audio, or video)</label>
+      <div class="upload-row">
+        <label class="upload-btn" for="fileInput">
+          <span>📎 Choose file</span>
+          <input type="file" id="fileInput" accept="image/*,audio/*,video/*" hidden />
+        </label>
+        <span class="upload-hint" id="uploadHint">JPG, PNG, MP3, WAV, MP4, WebM — up to 25MB</span>
+      </div>
+      <div class="evidence-list" id="evidenceList"></div>
+
+      <button class="btn btn--primary" id="btnSubmitReport">Submit report</button>
+      <p class="field-error" id="reportError"></p>
+    </div>
+
+    <!-- Step 4: Success -->
+    <div class="step-panel" id="panel-4">
+      <div class="success">
+        <svg width="56" height="56" viewBox="0 0 56 56"><circle cx="28" cy="28" r="27" fill="none" stroke="var(--emerald)" stroke-width="2"/><path d="M16 29l8 8 16-18" fill="none" stroke="var(--emerald)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Report filed</h3>
+        <p id="successReportId">Case ID —</p>
+        <p class="field-hint">Your report is now visible in the live feed and open for community voting.</p>
+        <button class="btn btn--outline" id="btnFileAnother">File another report</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AI ASSISTANT ================= -->
+<section class="assistant" id="assistant">
+  <p class="section-eyebrow">Powered by Gemini</p>
+  <h2>Not sure how to describe what you saw?</h2>
+  <p class="assistant__sub">Ask the Vigilant Citizen Assistant to help you turn what you witnessed into a clear, factual report.</p>
+
+  <div class="chat">
+    <div class="chat__messages" id="chatMessages">
+      <div class="chat__msg chat__msg--bot">
+        <span class="chat__avatar">👁️</span>
+        <div class="chat__bubble">Hi — tell me what you saw, and I'll help you write it up as a clear civic report.</div>
+      </div>
+    </div>
+    <form class="chat__input-row" id="chatForm">
+      <input type="text" id="chatInput" class="input" placeholder="e.g. I saw a clerk asking for a bribe for a certificate..." autocomplete="off" />
+      <button type="submit" class="btn btn--primary">Send</button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="brand brand--footer">
+      <svg class="brand__eye" viewBox="0 0 40 40" width="26" height="26" aria-hidden="true">
+        <path d="M2 20C2 20 10 8 20 8C30 8 38 20 38 20C38 20 30 32 20 32C10 32 2 20 2 20Z" fill="none" stroke="var(--saffron)" stroke-width="2.4"/>
+        <circle cx="20" cy="20" r="6.5" fill="var(--saffron)"/>
+      </svg>
+      <span>Vigilant<em>Citizen</em></span>
+    </div>
+    <p class="footer__tagline">Built for the AICTE GenAI &amp; Cloud Computing Internship — BharatCares × IBM.</p>
+    <p class="footer__meta">Frontend: HTML/CSS/JS · Backend: Node.js + Express · AI: Google Gemini API · Deployed on AWS</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
